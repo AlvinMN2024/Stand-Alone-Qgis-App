@@ -1,0 +1,11 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>arrow-in.png</file>
+    <file>mActionZoomIn.svg</file>
+    <file>mActionZoomOut.svg</file>
+    <file>mTaskRunning.svg</file>
+    <file>qgis_103961.png</file>
+    <file>qgis_logo_icon_170816.png</file>
+    <file>mActionPan.svg</file>
+  </qresource>
+</RCC>

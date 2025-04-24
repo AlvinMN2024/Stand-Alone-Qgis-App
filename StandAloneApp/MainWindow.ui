@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>676</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>PyQGIS Stand Alone</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="MainWindowResource.qrc">
+    <normaloff>:/icons/qgis_103961.png</normaloff>:/icons/qgis_103961.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="leftMargin">
+       <number>20</number>
+      </property>
+      <property name="topMargin">
+       <number>5</number>
+      </property>
+      <property name="rightMargin">
+       <number>20</number>
+      </property>
+      <property name="bottomMargin">
+       <number>5</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="text">
+         <string>Longitude</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="longEdit"/>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Latitude</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="latEdit"/>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QFrame" name="frame_2">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0">
+        <widget class="QgsMapCanvas" name="map_canvas"/>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>676</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionSubmit"/>
+    <addaction name="actionClose"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionSubmit"/>
+   <addaction name="actionZoomIn"/>
+   <addaction name="actionZoomOut"/>
+   <addaction name="actionPan"/>
+   <addaction name="actionGetCoords"/>
+  </widget>
+  <action name="actionClose">
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </action>
+  <action name="actionSubmit">
+   <property name="icon">
+    <iconset resource="MainWindowResource.qrc">
+     <normaloff>:/icons/mTaskRunning.svg</normaloff>:/icons/mTaskRunning.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Submit</string>
+   </property>
+   <property name="toolTip">
+    <string>Submit request</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionZoomIn">
+   <property name="icon">
+    <iconset resource="MainWindowResource.qrc">
+     <normaloff>:/icons/mActionZoomIn.svg</normaloff>:/icons/mActionZoomIn.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Zoomin</string>
+   </property>
+   <property name="toolTip">
+    <string>Zoom in</string>
+   </property>
+  </action>
+  <action name="actionZoomOut">
+   <property name="icon">
+    <iconset resource="MainWindowResource.qrc">
+     <normaloff>:/icons/mActionZoomOut.svg</normaloff>:/icons/mActionZoomOut.svg</iconset>
+   </property>
+   <property name="text">
+    <string>ZoomOut</string>
+   </property>
+   <property name="toolTip">
+    <string>Zoom out</string>
+   </property>
+  </action>
+  <action name="actionPan">
+   <property name="icon">
+    <iconset resource="MainWindowResource.qrc">
+     <normaloff>:/icons/mActionPan.svg</normaloff>:/icons/mActionPan.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Pan</string>
+   </property>
+   <property name="toolTip">
+    <string>Pan</string>
+   </property>
+  </action>
+  <action name="actionGetCoords">
+   <property name="icon">
+    <iconset resource="MainWindowResource.qrc">
+     <normaloff>:/icons/arrow-in.png</normaloff>:/icons/arrow-in.png</iconset>
+   </property>
+   <property name="text">
+    <string>Capture coordinates</string>
+   </property>
+   <property name="toolTip">
+    <string>Click to capture coordinates</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QgsMapCanvas</class>
+   <extends>QTextEdit</extends>
+   <header>qgsmapcanvas.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="MainWindowResource.qrc"/>
+ </resources>
+ <connections/>
+</ui>
