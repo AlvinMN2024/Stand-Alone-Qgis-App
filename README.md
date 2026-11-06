@@ -1,8 +1,21 @@
-This is a stand alone PyQGIS application. It's not meant to be a "real" app but is currently in good running condition. I wrote it using PyQGIS (Qt 5). 
-My main intention for uploading this is that perhaps somebody can benefit from this by way of learning how to write  special stand alone apps with PyQgis/PyQt.
-Kindly read the latest QGIS programming cookbook. The code here will also shed light on how to develop python scripts and plugin in QGIS. If anybody would
-like to learn, I can create a documentation on how I wrote this and I can also write how to create scripts and plugins that works (Qt5 and Qt6). 
-My Email address is AlvinMN2022@gmail.com.
+# Stand-alone PyQGIS application
 
-muchas gracias,
-Alvin
+This is a small desktop example that opens a QGIS project and provides pan, zoom, and coordinate capture tools. The application code is updated for the QGIS 4.x Qt 6 bindings (`qgis.PyQt`). Run it with the Python interpreter and environment belonging to the QGIS installation; do not install a separate PyQt package into that environment.
+
+## Requirements
+
+- QGIS 4.2.3 (or another QGIS 4.x release with the same Qt 6 API)
+- Python provided by that QGIS installation
+- The `data.gpkg` GeoPackage referenced by `StandAloneApp/project1.qgz`
+
+The downloaded archive does not include `StandAloneApp/data.gpkg`. The project references layers in that file (`MunicipalityCentroids`, `PalCstPoly`, `Roads`, and `munipol`), so copy the original GeoPackage into `StandAloneApp/` before running. Without it, the project will open with missing layers.
+
+## Run on Linux
+
+Use the Python environment configured by your QGIS package. If QGIS is installed with a nonstandard prefix, set `QGIS_PREFIX_PATH` to that prefix before launching. The default prefix in the sample is `/usr`.
+
+```sh
+python3 StandAloneApp/StandAloneAppSample.py
+```
+
+For distributions where QGIS provides a launcher or environment setup script, launch through that environment so the QGIS Python modules and Qt libraries are on the search paths.
